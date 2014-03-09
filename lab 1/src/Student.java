@@ -1,5 +1,8 @@
-public class Student {
+import java.io.Serializable;
 
+public class Student implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	public String nazwisko;
 	public String imie;
 	public long album;
@@ -18,8 +21,7 @@ public class Student {
 	}
 
 	public void wyswietl() {
-		System.out.printf(format, nazwisko, imie,
-				album, rok, srednia);
+		System.out.printf(format, nazwisko, imie, album, rok, srednia);
 	}
 
 	public String toString() {

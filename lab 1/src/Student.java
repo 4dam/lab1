@@ -1,10 +1,10 @@
 public class Student {
 
-	String nazwisko;
-	String imie;
-	long album;
-	int rok;
-	double srednia;
+	public String nazwisko;
+	public String imie;
+	public long album;
+	public int rok;
+	public double srednia;
 	
 	public static String format = "|%-19s|%-19s|%10d|%3d|%7.2f|";
 	

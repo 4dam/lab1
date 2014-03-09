@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
-	int max = 100;
-	Student[] stud = new Student[max];
+	static int ilosc = 0;
+	static int max = 100;
+	static Student[] stud = new Student[max];
 
 	public static void main(String[] args) {
-
+		wczytajZWejscia();
 	}
 
 	public void wypiszWTabeli() {
@@ -16,12 +17,25 @@ public class Main {
 		}
 	}
 
-	public void wczytajZWejscia() {
+	public static void wczytajZWejscia() {
 		Scanner sc = new Scanner(System.in);
-		System.out
-				.println("Podaj kolenjo: nazwisko, imiê, album, rok i œredni¹.");
+		System.out.println("Podaj kolenjo: nazwisko, imiê, album, rok i œredni¹.");
+		
+		while (ilosc < max) {
+			String nazwisko = sc.next();
+			String imie = sc.next();
+			long album = sc.nextLong();
+			int rok = sc.nextInt();
+			double srednia = sc.nextDouble();
+			
+			stud[ilosc] = new Student(nazwisko, imie, album, rok, srednia);
+			ilosc+=1;
+			
+			System.out.println(stud[-1]);
+			
+		}
 
-		for (int i = 0; i < max; i++) {
+	/*	for (int i = 0; i < max; i++) {
 			if (stud[i] == null) {
 				String nazwisko = sc.next();
 				String imie = sc.next();
@@ -32,7 +46,8 @@ public class Main {
 				stud[i] = new Student(nazwisko, imie, album, rok, srednia);
 			}
 
-		}
+		} */
+		sc.close();
 
 	}
 }
